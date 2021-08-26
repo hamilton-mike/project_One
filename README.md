@@ -2,7 +2,7 @@
 
 This project utilizes MongoDB, Mongoose, EJS, Express.js, and Node.js
 
-### Technologies UPDATE
+### Technologies
 
 This project is completed with:
  - HTML
@@ -20,7 +20,7 @@ This project is completed with:
  - Add comments on other posts
 
 ## Wireframe
-
+[![Screen-Shot-2021-08-26-at-2-59-55-PM.png](https://i.postimg.cc/NM3wJJWX/Screen-Shot-2021-08-26-at-2-59-55-PM.png)](https://postimg.cc/wyQP3Vxx)
 
 
 ## Core Requirements
