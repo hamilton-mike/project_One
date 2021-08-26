@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inspect Tweet</title>
 </head>
 <body>
-    
+    <h1>This is your tweet</h1>
+    <h5><%=feed.name%></h5>
+    <h6><%=feed.username%></h6>
+    <p><i><%=feed.entry%></i></p>
+
+    <a href="/feed">Back to your timeline</a>
+    <a href="/feed/<%=id%>/edit">Edit this tweet</a>
 </body>
 </html>

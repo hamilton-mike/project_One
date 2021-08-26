@@ -11,14 +11,21 @@
     <ul>
         <% for( let i = 0; i < feed.length; i++ ) { %>
         <li>
-            <a href="/feeds/<%=feed[i]._id%>"> <%= feed[i].name%> </a>
+            <a href="/feed/<%=feed[i]._id%>"> <%=feed[i].entry%> </a>
         </li>
-        <!-- form for delete goes here -->
+
+        <form action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+        </form>
+
+        <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
+        
+        <% } %>
+
     </ul>
     
-    <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
-    <% } %>
-
+    
+    
     <a href="/feed/new">Create a new log!</a>
     
 </body>

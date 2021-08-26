@@ -22,19 +22,30 @@ router.get('/new', ( req, res )=> {
 
 //edit (.get) ejs
 router.get('/:id/edit', ( req, res )=> {
-    Feed.findById(req.params.id, ((err, idFeed)=> {
+    Feed.findById(req.params.id, ((err, editFeed)=> {
         if (err) {
             res.send(err)
         } else {
             res.render('edit.ejs', {
-                feed: idFeed,
-                id: req.params.id
+                feed: editFeed,
             })
         }
     }))
 })
 
 //show (.get) ejs
+router.get('/:id', ( req, res )=> {
+    Feed.findById(req.params.id, ((err, showFeed)=> {
+        if (err) {
+            res.send(err)
+        } else {
+            res.render('show.ejs', {
+                feed: showFeed,
+                id: req.params.id
+            })
+        }
+    }))
+})
 
 //create (.post)
 router.post('/', ( req, res )=> {
@@ -48,7 +59,27 @@ router.post('/', ( req, res )=> {
 })
 
 //delete (.delete)
+router.delete('/:id', ( req, res )=> {
+    Feed.findByIdAndDelete(req.params.id, ((err, feed)=> {
+        if (err) {
+            res.send(err)
+        } else {
+            console.log('deleting item with the id:', req.params.id)
+            res.redirect('/feed')
+        }
+    }))
+})
 
 //update (.put)
+router.put('/:id', ( req, res)=> {
+    Feed.findByIdAndUpdate(req.params.id, req.body, {new: true}, ((err, feed)=> {
+        if (err) {
+            res.send(err)
+        } else {
+            console.log('updated item at id:', req.params.id)
+            res.redirect('/feed')
+        }
+    }))
+})
 
 module.exports = router
