@@ -4,7 +4,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-//modles data import
+const Feed = require('./controllers/tweet')
 
 // =======================================
 //           GLOBAL CONFIGURATIONS
@@ -21,7 +21,7 @@ const options = {
     useUnifiedTopology: true
 }
 
-mongoose.connect('mongodb://localhost:27017/', options) //still havent come up with a name for our db yet
+mongoose.connect('mongodb://localhost:27017/Feeds', options)
 
 mongoose.connection.once('open', ()=> console.log('successfully connected to mongodb!'))
 mongoose.connection.on('error', (err) => console.log(err.message, "FIX ME PLZ"))
@@ -33,7 +33,7 @@ mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disc
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
-// data router
+app.use('/feed', Feed)
 
 // =======================================
 //               LISTENER
