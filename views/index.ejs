@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+</head>
+<body>
+    <h1>Timeline!</h1>
+    <ul>
+        <% for( let i = 0; i < feed.length; i++ ) { %>
+        <li>
+            <a href="/feeds/<%=feed[i]._id%>"> <%= feed[i].name%> </a>
+        </li>
+        <!-- form for delete goes here -->
+    </ul>
+    <% } %>
+
+    <a href="/feed/new">Create a new log!</a>
+
+</body>
+</html>
