@@ -2,7 +2,7 @@
 
 This project utilizes MongoDB, Mongoose, EJS, Express.js, and Node.js
 
-### Technologies UPDATE
+### Technologies
 
 This project is completed with:
  - HTML
