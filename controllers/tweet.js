@@ -21,7 +21,7 @@ router.get('/new', ( req, res )=> {
 })
 
 //edit (.get) ejs
-router.get('/:id', ( req, res )=> {
+router.get('/:id/edit', ( req, res )=> {
     Feed.findById(req.params.id, ((err, idFeed)=> {
         if (err) {
             res.send(err)
