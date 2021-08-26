@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tweet</title>
+</head>
+<body>
+    <h1>Create a New Tweet!!</h1>
+    <form action="/feed" method="POST">
+
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="username">username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="entry">Create your tweet</label>
+        <input type="text" name="entry" id="entry">
+
+        <input type="submit" value="Post your tweet!">
+
+    </form>
+    <a href="/feeds">Exit back to your timeline</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your Tweet</title>
+</head>
+<body>
+    <h1>Edit your tweet here!</h1>
+    <form action="/feed/<%=feed._id%>?_method=PUT" method="POST">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%=feed.name%>">
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value="<%=feed.username%>">
+
+        <label for="entry">Your Tweet</label>
+        <input type="text" name="entry" id="entry" value="<%=feed.entry%>">
+
+        <input type="submit" value="Edit this tweet">
+
+    </form>
+
+    <a href="/feed">Go back to your timeline</a>
+
+</body>
+</html>
