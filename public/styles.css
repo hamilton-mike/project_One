@@ -1,0 +1,49 @@
+/* BASIC FOUNDATION LAYOUT */
+
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    font: 12pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  header, footer {
+    width: 100%;
+    background: lightblue;
+    color: Black;
+    text-align: center;
+    line-height: 30px;
+  }
+  
+  main {
+    flex-grow: 2;
+    background: #d3d3d3;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav,
+  section,
+  aside {
+    flex-basis: 100px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    line-height: 100px;
+  }
+  
+  aside {
+      flex-grow: .25;
+  }
+  
+  nav {
+      flex-grow: .15;
+  }
+  
+  section {
+    flex-grow: 2;
+  }

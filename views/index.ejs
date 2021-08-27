@@ -4,29 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Tamagashi Game!</title>
 </head>
-<body>
-    <h1>Timeline!</h1>
-    <ul>
-        <% for( let i = 0; i < feed.length; i++ ) { %>
-        <li>
-            <a href="/feed/<%=feed[i]._id%>"> <%=feed[i].entry%> </a>
-        </li>
+    <body>
+        <header>
+            <h2>Timeline!</h2>
+        </header>
+        <!-- Main Game Screen ! -->
+        <main>
+            <!-- nav bar on left hand side -->
+            <nav>
+                <h2>nav bar</h2>
+                <a href="/feed/new">Create a new tweet!</a>
+            </nav>
+            <!-- section on the middle of the screen -->
+            <section>
+                <ul style="list-style: none;">
+                    <% for( let i = 0; i < feed.length; i++ ) { %>
+                    <li>
+                        <a href="/feed/<%=feed[i]._id%>"> <%=feed[i].name%> </a>
+                    </li>
+                    <form action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
+                    <% } %>
+                </ul>
+                <article>
+                    <div>
 
-        <form action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
-        </form>
+                    </div>
+                    <div>
 
-        <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
-        
-        <% } %>
-
-    </ul>
-    
-    
-    
-    <a href="/feed/new">Create a new log!</a>
-    
-</body>
+                    </div>
+                </article>
+            </section>
+            <!-- aside on the right of the screen! -->
+            <aside>
+                <h2>aside bar</h2>
+            </aside>
+        </main>
+        <footer>
+            Made by Froylan Rodriugez
+        </footer>
+    </body>
 </html>
