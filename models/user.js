@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const tweetSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         require: true
@@ -9,10 +9,10 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    entry: {
+    password: {
         type: String,
         require: true
-    },
+    }
 }, {timestamps: true})
 
-module.exports = mongoose.model('Feed', tweetSchema)
+module.exports = mongoose.model('User', userSchema)
