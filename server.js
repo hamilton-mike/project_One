@@ -5,6 +5,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const Feed = require('./controllers/tweet')
+const User = require('./controllers/user')
 
 // =======================================
 //           GLOBAL CONFIGURATIONS
@@ -33,6 +34,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use('/feed', Feed)
+app.use('/users', User)
 
 // =======================================
 //               LISTENER
