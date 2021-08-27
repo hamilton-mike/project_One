@@ -17,7 +17,6 @@ const port = 3000
 // =======================================
 const options = {
     useNewUrlParser: true,
-    useFindAndModify: false,
     useUnifiedTopology: true
 }
 
