@@ -13,6 +13,10 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    user : {
+        type: mongoose.Schema.Types.ObjectId,
+		ref: 'User'
+    }
 }, {timestamps: true})
 
 module.exports = mongoose.model('Feed', tweetSchema)
