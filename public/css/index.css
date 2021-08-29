@@ -1,6 +1,8 @@
 body {
     overflow: hidden;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url('../vixSsW.png');
+    opacity: 0.9;
 }
 .container {
     display: grid;
@@ -26,7 +28,7 @@ a {
     color: #000000;
 }
 .feed a:hover {
-    color: #ffffff;
+    color: #f70303;
 }
 nav a:hover {
     color: #1B365C;
