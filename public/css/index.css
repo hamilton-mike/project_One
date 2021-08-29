@@ -43,7 +43,6 @@ main {
 .sidebar {
     grid-area: sidebar;
     pointer-events: none;
-    background-color: #000000;
 }
 .feed {
     display: flex;
