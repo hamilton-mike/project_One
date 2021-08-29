@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template: repeat(2, 2fr) / 2fr 2fr 1fr;
+    grid-template-areas:
+    "link-header edit-pic edit-pic"
+    "form-group form-group links";
+}
+.form-group, .links, #edit-pic {
+    margin-top: 105px;
+    margin-left: 100px;
+}
+.form-group {
+    width: 100%;
+}
+.edit-pic {
+    background-image: url('../edit.png');
+    background-repeat: no-repeat;
+    /* width: 100vw; */
+    grid-area: edit-pic;
+}
+input {
+    height: 15%
+}
+.link-header {
+    grid-area: link-header;
+}

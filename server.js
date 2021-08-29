@@ -30,7 +30,7 @@ mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disc
 // =======================================
 //               MIDDLEWARE
 // =======================================
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use('/feed', Feed)
