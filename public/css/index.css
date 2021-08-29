@@ -28,12 +28,13 @@ a {
     color: #000000;
 }
 .feed a:hover {
-    color: #f70303;
+    color: #ffffff;
 }
 nav a:hover {
     color: #1B365C;
 }
 main {
+    padding: 40px;
   grid-area: main;
   background-color: #699e8c;
   text-decoration: underline;
