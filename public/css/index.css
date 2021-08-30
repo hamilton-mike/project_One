@@ -1,10 +1,17 @@
-/*
 body {
-    overflow: hidden;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url('../vixSsW.png');
+    /* background-image: url('../vixSsW.png'); */
     opacity: 0.9;
+    margin-top: 20px;
 }
+
+.padding-10 {
+    padding: 10px;
+}
+.comment {
+    margin-top: 60px;
+}
+/*
 .follow {
     color: whitesmoke;
 }
