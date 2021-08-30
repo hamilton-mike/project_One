@@ -2,7 +2,10 @@ const express = require('express')
 const User = require('../models/user')
 const router = express.Router()
 
-//index (.get) ejs
+// index (.get) ejs
+router.get('/' , (req, res) => {
+    res.render('user.ejs')
+})
 
 // new (.get) ejs
 
