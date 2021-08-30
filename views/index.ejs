@@ -11,11 +11,18 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <a href="/feed">Home</a>
-            <a href="">Profile</a>
-            <a href="">Sign Out</a>
-        </nav>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+           <div class="container">
+               <a href="#" class="navbar-brand">
+                   <img src="logo.png" alt="logo" height="150">
+                </a>
+               <div class="collapse navbar-collapse">
+                   <ul class="navbar-nav ms-auto">
+                       <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                   </ul>
+               </div>
+           </div>
+       </nav>
         <div class="row">
         <div class="col-md-3">
             <section class="panel">
@@ -39,7 +46,7 @@
         <div class="col-md-5">
             <div class="content">
                 <ul class="comment list-unstyled padding-10">
-                    <li class="comment">
+                    <li class="comment border border-dark">
                         <img src="tano_selfie.png" width="50" height="50" alt="avatar">
                         <% for (let i=0; i < feed.length; i++ ) { %>
                         <div class="comment-body">
@@ -49,20 +56,52 @@
                             </a>
                             <p>@<%= feed[i].entry %></p>
                         </div>
-                        <ul class="list-inline size-11 margin-top-10">
-                            <li class="pull-right">
-                                <form action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" value="DELETE">
-                                </form>
-                            </a>
-                            </li>
-                            <li class="pull-right">
-                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary"> Edit Tweet</a>
-                            </li>
-                        </ul>
+                        <div class="list-inline size-11 margin-top-10">
+                            <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+                                <input type="submit" value="DELETE">
+                            </form>
+                            <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
+                        </div>
                         <% } %>
                     </li>
-
+                    <li class="comment border border-dark">
+                        <img src="tano_selfie.png" width="50" height="50" alt="avatar">
+                        <% for (let i=0; i < feed.length; i++ ) { %>
+                            <div class="comment-body">
+                                <a href="#" class="comment-author">
+                                    <small class="text-muted pull-right">50 Minutes ago</small>
+                                    <span>@<%=feed[i].name%></span>
+                                </a>
+                                <p>@<%= feed[i].entry %>
+                                </p>
+                            </div>
+                            <div class="list-inline size-11 margin-top-10">
+                                <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" value="DELETE">
+                                </form>
+                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
+                            </div>
+                            <% } %>
+                    </li>
+                    <li class="comment border border-dark">
+                        <img src="tano_selfie.png" width="50" height="50" alt="avatar">
+                        <% for (let i=0; i < feed.length; i++ ) { %>
+                            <div class="comment-body">
+                                <a href="#" class="comment-author">
+                                    <small class="text-muted pull-right">50 Minutes ago</small>
+                                    <span>@<%=feed[i].name%></span>
+                                </a>
+                                <p>@<%= feed[i].entry %>
+                                </p>
+                            </div>
+                            <div class="list-inline size-11 margin-top-10">
+                                <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" value="DELETE">
+                                </form>
+                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
+                            </div>
+                            <% } %>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -83,21 +122,20 @@
                    </ul>
                </div>
             </section>
-        </div>
-</div>
-        <main>
-            <h2>Enlist Today</h2> <br />
-            <img width="200" height="200" src="h234E5A90.png" alt="ad">
-            <br>
-            <!-- <iframe width="200" height="200"
-                src="https://www.youtube.com/embed/xmdKLPEmsRw?playlist=xmdKLPEmsRw&autoplay=1&loop=1&mute=1"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-                </iframe> -->
-            <img width="200" height="200" src="rebel.png" alt="ad">
+            <main>
+                <h2>Enlist Today</h2> <br />
+                <img width="200" height="200" src="h234E5A90.png" alt="ad">
+                <br>
+                <!-- <iframe width="200" height="200"
+                    src="https://www.youtube.com/embed/xmdKLPEmsRw?playlist=xmdKLPEmsRw&autoplay=1&loop=1&mute=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe> -->
+                <img width="200" height="200" src="rebel.png" alt="ad">
 
-        </main>
+            </main>
+        </div>
     </div>
 
 </body>
