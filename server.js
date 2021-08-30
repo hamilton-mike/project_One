@@ -1,9 +1,12 @@
 // =======================================
 //                DEPENDENCIES
 // =======================================
+require('dotenv').config()
+
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const session = require('express-session');
 const Feed = require('./controllers/tweet')
 const User = require('./controllers/user')
 
@@ -11,7 +14,7 @@ const User = require('./controllers/user')
 //           GLOBAL CONFIGURATIONS
 // =======================================
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // =======================================
 //               DATABASE
@@ -30,11 +33,22 @@ mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disc
 // =======================================
 //               MIDDLEWARE
 // =======================================
-app.use(express.static(__dirname + '/public'))
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use('/feed', Feed)
 app.use('/users', User)
+
+app.get('/', (req, res) => {
+	console.log('currentUser: ', req.session.currentUser)
+	res.render('home.ejs', {currentUser: req.session.currentUser || ""})
+});
 
 // =======================================
 //               LISTENER
