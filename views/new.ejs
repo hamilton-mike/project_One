@@ -13,42 +13,37 @@
 
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Create a New Tweet!!</h1>
-        </div>
+
+        <nav class="navbar navbar-dark bg-dark static-top">
+            <a href="#" class="navbar-brand">
+                <img src="logo.png" alt="logo" height="150">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                    <li class="nav-item link">
+                        <a href="/feed">Back to your Feed</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div id="video">
-            <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/wxL8bVJhXCM?playlistwxL8bVJhXCM&autoplay=1&mute=1&start=50"
+            <!-- <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/wxL8bVJhXCM?playlistwxL8bVJhXCM&autoplay=1&mute=1&start=50&loop=1"
                 title="YouTube video player" frameborder="0" allow="autoplay">
-            </iframe>
+            </iframe> -->
         </div>
 
-        <div class="form">
+        <div>
+            <h1>Create New Post!!</h1>
             <form action="/feed" method="POST">
-                <div class="form-group">
-                    <label for="name">name</label>
-                    <input type="text" class="form-control" name="name" id="name">
-                </div>
-
-                <div class="form-group">
-                    <label for="username">username</label>
-                    <input type="text" class="form-control" name="username" id="username">
-                </div>
-
-                <div class="form-group">
-                    <label for="entry">Create your tweet</label>
-                    <input type="text" class="form-control" name="entry" id="entry">
-                </div>
-
-                <button type="submit" value="Post your tweet!" class="btn btn-danger">
-                    Submit
-                </button>
-
+                <fieldset class="account-info">
+                    <label for="entry"></label>
+                    <textarea type="text" name="entry" id="entry"></textarea>
+                </fieldset>
+                <input type="submit" value="Submit">
             </form>
-        </div>
-
-        <div class="link">
-            <a href="/feed">Back to your timeline</a>
         </div>
     </div>
 

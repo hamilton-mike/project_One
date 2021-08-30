@@ -1,8 +1,7 @@
-
 body {
     background-image: url('../yoda.png');
 }
-.container {
+ .container {
     padding: 20px;
 }
 .form-group, .links, #edit-pic {

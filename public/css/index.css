@@ -11,6 +11,12 @@ body {
 .comment {
     margin-top: 60px;
 }
+.sith:hover {
+    background-color: red;
+}
+.jedi:hover {
+    background-color: blue;
+}
 /*
 .follow {
     color: whitesmoke;

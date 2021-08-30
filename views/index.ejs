@@ -40,12 +40,12 @@
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Twitter"><i class="fa fa-twitter"></i></a>
             </section>
-            <button><a href="/feed/new">Create a new tweet!</a></button>
         </div>
 
         <div class="col-md-5">
             <div class="content">
                 <ul class="comment list-unstyled padding-10">
+                    <button><a href="/feed/new">Create a new tweet!</a></button>
                     <li class="comment border border-dark">
                         <img src="tano_selfie.png" width="50" height="50" alt="avatar">
                         <% for (let i=0; i < feed.length; i++ ) { %>
@@ -98,7 +98,7 @@
                                 <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
                                     <input type="submit" value="DELETE">
                                 </form>
-                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
+                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Post</a>
                             </div>
                             <% } %>
                     </li>
@@ -115,10 +115,10 @@
                 </header>
                <div class="panel-body noradius padding-10">
                    <ul class="bullet-list list-unstyled">
-                    <li class="list-group-item">Captain Rex</li>
-                    <li class="list-group-item">Asajj Ventress</li>
-                    <li class="list-group-item">Barriss Offee</li>
-                    <li class="list-group-item">Ezra Bridger</li>
+                    <li class="list-group-item jedi">Captain Rex</li>
+                    <li class="list-group-item sith">Asajj Ventress</li>
+                    <li class="list-group-item jedi">Barriss Offee</li>
+                    <li class="list-group-item sith">Ezra Bridger</li>
                    </ul>
                </div>
             </section>
