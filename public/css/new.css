@@ -1,39 +1,36 @@
 body {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpSpob9nGefYKQY3Z45Q_HjtUGKVyx8IAVgQ&usqp=CAU');
 }
-.container {
-    height: 100vh;
-}
-.header {
+
+h1 {
     display: flex;
     justify-content: center;
+    font-family: 'Oswald';
+    font-weight: 500;
     color: black;
-    background-color: white;
-    opacity: 0.7;
-    margin: 50px;
+    background-color: yellow;
+    border-bottom: 2px solid red;
 }
-.form {
-    color: red;
-    background:rgba(black, 0.5);
-    margin: 50px;
-    width: 50%;
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
 }
-.form input {
-    background-color: rgba(255, 0, 0, 0.767);
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
 }
-.form label {
-    background-color: whitesmoke;
-    color: rgba(255, 0, 0, 0.767);
+
+textarea {
+  width: 1250px;
+  height: 80px;
+  resize: none;
 }
-.link {
-    display: flex;
-    justify-content: center;
-    background:rgba(black, 0.5);
-}
-a {
-    justify-content: center;
-    color: red;
-}
+
 #video {
     display: flex;
     justify-content: center;

@@ -11,10 +11,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="link-header">
-            <h1>Edit your tweet here!</h1>
-            <a href="/feed">Go back to your timeline</a>
-        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="logo.png" alt="logo" height="150">
+                </a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="/feed" class="nav-link active">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="form-group">
             <form action="/feed/<%=feed._id%>?_method=PUT" method="POST">
 
@@ -37,7 +47,6 @@
 
             </form>
         </div>
-        <div class="edit-pic"></div>
     </div>
 </body>
 </html>
