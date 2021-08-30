@@ -7,7 +7,9 @@ const User = require('../models/user')
 //loginUser (.post)
 router.post('/login', ( req, res )=> {
     console.log('session object', req.session)
-    User.findOne({username: req.body.username}, ((err, foundUser)=> {
+    User.findOne({
+        username: req.body.username
+    }, ((err, foundUser)=> {
         if (err) {
             res.send(err)
         } else {
@@ -18,7 +20,7 @@ router.post('/login', ( req, res )=> {
                 if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                     req.session.currentUser = foundUser
                     console.log('Logged in!', foundUser.username)
-                    res.redirect('/')
+                    res.redirect('/feed')
                 } else {
                     console.log("incorrect username and/or password 2");
                     res.redirect('/login')
@@ -31,6 +33,7 @@ router.post('/login', ( req, res )=> {
 //createUser (.post)
 router.post('/registration', ( req, res )=> {
     const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+    req.body.password = passwordHash
 
     const userDbEntry = {
         username: req.body.username,
@@ -42,13 +45,19 @@ router.post('/registration', ( req, res )=> {
         if (err) {
             res.send(err)
         } else {
-            console.log(createdUser)
+            req.session.currentUser = createdUser
+            console.log("created user is", createdUser)
             res.redirect('/')
         }
     }))
 
 })
 
-//logout (.?)
+//logout (.delete)
+router.delete("/logout", (req, res) => {
+    req.session.destroy(() => {
+      res.redirect("/login")
+    });
+  });
 
 module.exports = router

@@ -6,7 +6,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-const session = require('express-session');
+const session = require('express-session')
 const Feed = require('./controllers/tweet')
 const User = require('./controllers/user')
 
@@ -24,7 +24,7 @@ const options = {
     useUnifiedTopology: true
 }
 
-mongoose.connect('mongodb://localhost:27017/Feeds', options)
+mongoose.connect(process.env.MONGODBURI, options)
 
 mongoose.connection.once('open', ()=> console.log('successfully connected to mongodb!'))
 mongoose.connection.on('error', (err) => console.log(err.message, "FIX ME PLZ"))
@@ -47,8 +47,10 @@ app.use('/users', User)
 
 app.get('/', (req, res) => {
 	console.log('currentUser: ', req.session.currentUser)
-	res.render('home.ejs', {currentUser: req.session.currentUser || ""})
-});
+	res.render('home.ejs', {
+        currentUser: req.session.currentUser || ""
+    })
+})
 
 // =======================================
 //               LISTENER

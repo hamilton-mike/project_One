@@ -4,20 +4,37 @@ const router = express.Router()
 
 //index (.get) ejs
 router.get('/', ( req, res )=> {
-    Feed.find({}, ((err, feedIndex)=> {
-        if (err) {
-            res.send(err)
-        } else {
-            res.render('index.ejs', {
-                feed: feedIndex
-            })
-        }
-    }))
+    // Feed.find({}, ((err, feedIndex)=> {
+    //     if (err) {
+    //         res.send(err)
+    //     } else {
+    //         res.render('index.ejs', {
+    //             feed: feedIndex,
+    //             currentUser: req.session.currentUser
+    //         })
+    //     }
+    // }))
+    if (req.session.currentUser) {
+        Feed.find({user: req.session.currentUser._id}, (err, feedIndex)=> {
+            if (err) {
+                res.send(err)
+            } else {
+                res.render('index.ejs', {
+                    feed: feedIndex,
+                    currentUser: req.session.currentUser
+                })
+            }
+        })
+    } else {
+        res.redirect('/feed')
+    }
 })
 
 // new (.get) ejs
 router.get('/new', ( req, res )=> {
-    res.render('new.ejs')
+    res.render('new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 //edit (.get) ejs
@@ -28,6 +45,7 @@ router.get('/:id/edit', ( req, res )=> {
         } else {
             res.render('edit.ejs', {
                 feed: editFeed,
+                currentUser: req.session.currentUser
             })
         }
     }))
@@ -35,27 +53,43 @@ router.get('/:id/edit', ( req, res )=> {
 
 //show (.get) ejs
 router.get('/:id', ( req, res )=> {
-    Feed.findById(req.params.id, ((err, showFeed)=> {
+//     Feed.findById(req.params.id, ((err, showFeed)=> {
+//         if (err) {
+//             res.send(err)
+//         } else {
+//             res.render('show.ejs', {
+//                 feed: showFeed,
+//                 id: req.params.id,
+//                 currentUser: req.session.currentUser
+//             })
+//         }
+//     }))
+    Feed.findById(req.params.id).populate('User').exec((err, showFeed)=> {
         if (err) {
             res.send(err)
         } else {
-            res.render('show.ejs', {
+            res.render("show.ejs", {
                 feed: showFeed,
-                id: req.params.id
+                currentUser: req.session.currentUser
             })
         }
-    }))
+    })
 })
 
 //create (.post)
 router.post('/', ( req, res )=> {
-    Feed.create(req.body, ((err, createdFeed)=> {
-        if (err) {
-            res.send(err)
-        } else {
-            res.redirect('/feed')
-        }
-    }))
+    if (req.session.currentUser) {
+        req.body.user = req.body.currentUser._id
+        Feed.create(req.body, ((err, createdFeed)=> {
+            if (err) {
+                res.send(err)
+            } else {
+                res.redirect('/feed')
+            }
+        }))
+    }else {
+        res.redirect('/login')
+    }
 })
 
 //delete (.delete)
