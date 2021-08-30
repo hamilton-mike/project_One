@@ -18,21 +18,23 @@
         <div class="form-group">
             <form action="/feed/<%=feed._id%>?_method=PUT" method="POST">
 
-                <label for="staticName" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="StaticName" id="staticName" value="<%=feed.name%>">
-                </div>
+                <fieldset>
+                    <legend>Edit your tweet</legend>
+                    <label for="staticName" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="StaticName" id="staticName" value="<%=feed.name%>">
+                    </div>
+                    <label for="staticUsername">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="staticUsername" id="staticUsername" value="<%=feed.username%>">
+                    </div>
+                    <label for="staticEntry">Your Tweet</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="staticEntry" id="staticEntry" value="<%=feed.entry%>">
+                    </div>
+                    <input type="submit" value="Edit this tweet">
+                </fieldset>
 
-                <label for="staticUsername">Username</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="staticUsername" id="staticUsername" value="<%=feed.username%>">
-                </div>
-
-                <label for="staticEntry">Your Tweet</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="staticEntry" id="staticEntry" value="<%=feed.entry%>">
-                </div>
-                <input type="submit" value="Edit this tweet">
             </form>
         </div>
         <div class="edit-pic"></div>
