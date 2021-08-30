@@ -1,7 +1,37 @@
 body {
     background-image: url('../yoda.png');
 }
- .container {
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald';
+    font-weight: 500;
+    color: black;
+    background-color: yellow;
+    border-bottom: 2px solid red;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 1250px;
+  height: 80px;
+  resize: none;
+}
+
+.container {
     padding: 20px;
 }
 .form-group, .links, #edit-pic {
