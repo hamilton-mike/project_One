@@ -1,0 +1,22 @@
+
+body {
+    background-image: url('../yoda.png');
+}
+.container {
+    padding: 20px;
+}
+.form-group, .links, #edit-pic {
+    margin-top: 105px;
+    margin-left: 100px;
+}
+.form-group {
+    width: 30%;
+    color: blue;
+}
+
+input {
+    height: 15%
+}
+.link-header {
+    color: blue;
+}
