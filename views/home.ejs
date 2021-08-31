@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/home.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-      <h1>welcome to our twitter please sign in or create an account</h1>
-      <nav>
-      </nav>
-    </header>
-	<h3><%= currentUser && currentUser.username%></h3>
-    <div>
-      <h4>Login</h4>
-      <form action="/users/login" method="POST">
-        <input type="text" name="username" placeholder="username" /><br />
-        <input type="password" name="password" placeholder="password" /><br />
-        <button type="submit">Login</button>
-      </form>
 
-      <h4>Registration</h4>
-      <form action="/users/registration" method="POST">
-        <input type="text" name="username" placeholder="username" /><br />
-        <input type="email" name="email" placeholder="email" /><br />
-        <input type="password" name="password" placeholder="password" /><br />
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  </body>
+  <nav>
+    <img src="logo.png" alt="logo" width="150" height="150">
+    <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
+    <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
+    <h3><%= currentUser && currentUser.username%></h3>
+  </nav>
+
+  <hr class="half-margins">
+
+  <div class="main">
+    <section class="signup">
+      <div class="container">
+        <div class="signup-content">
+          <h2 class="form-title">Sign Up</h2>
+          <form action="/feed" method="POST">
+            <fieldset>
+              <legend>New User</legend>
+              <label for="username"></label>
+              <input type="text" name="username" placeholder="username" id="username" /><br />
+              <label for="email"></label>
+              <input type="email" name="email" placeholder="email" id="email" /><br />
+              <label for="password"></label>
+              <input type="password" name="password" placeholder="password" id="password" /><br />
+              <label for="bio"></label>
+              <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Add Bio"></textarea>
+              <button type="submit">Register</button>
+            </fieldset>
+          </form>
+          <div class="signup-image">
+            <figure>
+              <img src="edit.png" alt="">
+              <a href="/" class="sign-image-link">Already a member?</a>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
 </html>
