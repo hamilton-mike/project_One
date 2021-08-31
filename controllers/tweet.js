@@ -26,7 +26,7 @@ router.get('/', ( req, res )=> {
             }
         })
     } else {
-        res.redirect('/feed')
+        res.redirect('/')
     }
 })
 
@@ -64,7 +64,8 @@ router.get('/:id', ( req, res )=> {
 //             })
 //         }
 //     }))
-    Feed.findById(req.params.id).populate('User').exec((err, showFeed)=> {
+    console.log(req.params.id)
+    Feed.findById(req.params.id).populate('user').exec((err, showFeed)=> {
         if (err) {
             res.send(err)
         } else {
@@ -79,11 +80,12 @@ router.get('/:id', ( req, res )=> {
 //create (.post)
 router.post('/', ( req, res )=> {
     if (req.session.currentUser) {
-        req.body.user = req.body.currentUser._id
+        req.body.user = req.session.currentUser._id
         Feed.create(req.body, ((err, createdFeed)=> {
             if (err) {
                 res.send(err)
             } else {
+                console.log(createdFeed)
                 res.redirect('/feed')
             }
         }))
