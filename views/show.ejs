@@ -7,12 +7,15 @@
     <title>Inspect Tweet</title>
 </head>
 <body>
-    <h1>This is your tweet</h1>
-    <h5><%=feed.name%></h5>
-    <h6><%=feed.username%></h6>
-    <p><i><%=feed.entry%></i></p>
-
-    <a href="/feed">Back to your timeline</a>
-    <a href="/feed/<%=id%>/edit">Edit this tweet</a>
+    <h1><%=feed.user.username%>'s' feed Show View</h1>
+    <h2>Ship is <% if(!feed.shipIsBroken){%>NOT<%}%> broken.</h2>
+    <h3>Title: <%= feed.title %> </h3>
+    <p>Entry: <%= feed.entry %></p>
+    <div>
+        <a href='/feed'>Back to feed</a>
+    </div>
+    <div>
+        <a href='/feed/new'>Create New feed</a>
+    </div>
 </body>
 </html>

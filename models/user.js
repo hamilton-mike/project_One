@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true
+    },
+    bio: {
+        type: String,
+        require: true
     }
 }, {timestamps: true})
 

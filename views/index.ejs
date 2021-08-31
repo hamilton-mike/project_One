@@ -32,9 +32,7 @@
                 </figure>
 
                 <hr class="half-margins">
-                <% for (let i=0; i < feed.length; i++ ) { %>
-                <h3 class="text-black">@<%=feed[i].username%></h3>
-                <% } %>
+                <h3 class="text-black">@<%=currentUser.username%></h3>
                 <p class="size-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quo minus laboriosam aperiam, minima ducimus fugiat doloribus officia necessitatibus vel. Illum reiciendis laborum facilis minima sit quas perspiciatis et. Magnam.</p>
                 <h6>Follow Me</h6>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -51,11 +49,11 @@
                     <li class="comment border border-dark">
                         <img src="tano_selfie.png" width="50" height="50" alt="avatar">
                         <div class="comment-body">
-                            <a href="#" class="comment-author">
+                            <a href="/feed/<%=feed[i]._id%>" class="comment-author">
                                 <small class="text-muted pull-right">50 Minutes ago</small>
-                                <span>@<%=feed[i].name%></span>
+                                <span>@<%=currentUser.username%></span>
                             </a>
-                            <p>@<%= feed[i].entry %></p>
+                            <p><%= feed[i].entry %></p>
                         </div>
                         <div class="list-inline size-11 margin-top-10">
                             <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
@@ -64,44 +62,6 @@
                             <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
                         </div>
                         <% } %>
-                    </li>
-                    <li class="comment border border-dark">
-                        <img src="tano_selfie.png" width="50" height="50" alt="avatar">
-                        <% for (let i=0; i < feed.length; i++ ) { %>
-                            <div class="comment-body">
-                                <a href="#" class="comment-author">
-                                    <small class="text-muted pull-right">50 Minutes ago</small>
-                                    <span>@<%=feed[i].name%></span>
-                                </a>
-                                <p>@<%= feed[i].entry %>
-                                </p>
-                            </div>
-                            <div class="list-inline size-11 margin-top-10">
-                                <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" value="DELETE">
-                                </form>
-                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
-                            </div>
-                            <% } %>
-                    </li>
-                    <li class="comment border border-dark">
-                        <img src="tano_selfie.png" width="50" height="50" alt="avatar">
-                        <% for (let i=0; i < feed.length; i++ ) { %>
-                            <div class="comment-body">
-                                <a href="#" class="comment-author">
-                                    <small class="text-muted pull-right">50 Minutes ago</small>
-                                    <span>@<%=feed[i].name%></span>
-                                </a>
-                                <p>@<%= feed[i].entry %>
-                                </p>
-                            </div>
-                            <div class="list-inline size-11 margin-top-10">
-                                <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" value="DELETE">
-                                </form>
-                                <a href="/feed/<%=feed[i]._id%>/edit" class="text-primary pull-right"> Edit Post</a>
-                            </div>
-                            <% } %>
                     </li>
                 </ul>
             </div>
