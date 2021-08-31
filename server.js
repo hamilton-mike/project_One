@@ -47,7 +47,7 @@ app.use('/users', User)
 
 app.get('/', (req, res) => {
 	console.log('currentUser: ', req.session.currentUser)
-	res.render('home.ejs', {
+	res.render('login.ejs', {
         currentUser: req.session.currentUser || ""
     })
 })
