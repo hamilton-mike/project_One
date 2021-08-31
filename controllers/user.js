@@ -15,15 +15,16 @@ router.post('/login', ( req, res )=> {
         } else {
             if (!foundUser) {
                 console.log('incorrect username and/or password 1');
-                res.redirect('/login')
+                res.redirect('/')
             } else {
                 if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                     req.session.currentUser = foundUser
                     console.log('Logged in!', foundUser.username)
+                    console.log(foundUser)
                     res.redirect('/feed')
                 } else {
                     console.log("incorrect username and/or password 2");
-                    res.redirect('/login')
+                    res.redirect('/')
                 }
             }
         }
