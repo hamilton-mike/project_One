@@ -48,7 +48,7 @@ router.post('/registration', ( req, res )=> {
         } else {
             req.session.currentUser = createdUser
             console.log("created user is", createdUser)
-            res.redirect('/')
+            res.redirect('/feed')
         }
     }))
 
