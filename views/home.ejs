@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
     <title>Document</title>
 </head>
 <body>
@@ -25,17 +25,17 @@
       <div class="container">
         <div class="signup-content">
           <h2 class="form-title">Sign Up</h2>
-          <form action="/feed" method="POST">
+          <form action="/users/registration" method="POST">
             <fieldset>
               <legend>New User</legend>
               <label for="username"></label>
-              <input type="text" name="username" placeholder="username" id="username" /><br />
+              <input type="text" name="username" placeholder="username" /><br />
               <label for="email"></label>
-              <input type="email" name="email" placeholder="email" id="email" /><br />
+              <input type="email" name="email" placeholder="email" /><br />
               <label for="password"></label>
-              <input type="password" name="password" placeholder="password" id="password" /><br />
+              <input type="password" name="password" placeholder="password" /><br />
               <label for="bio"></label>
-              <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Add Bio"></textarea>
+              <textarea name="bio" cols="30" rows="10" placeholder="Add Bio"></textarea>
               <button type="submit">Register</button>
             </fieldset>
           </form>
