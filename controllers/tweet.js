@@ -26,7 +26,7 @@ router.get('/', ( req, res )=> {
             }
         })
     } else {
-        res.redirect('/feed')
+        res.redirect('/')
     }
 })
 

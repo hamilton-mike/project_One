@@ -1,12 +1,11 @@
 body {
   background: #ddd;
-  display: flex;
-  justify-content: center;
 }
 nav {
   margin: 20px;
   padding: 30px;
 }
+
 .container {
   margin: 50px auto;
   display: flex;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="logo" width="150" height="150">
+        <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
+        <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
+        <h3>
+            <%= currentUser && currentUser.username%>
+        </h3>
+    </nav>
+
+    <hr class="half-margins">
+
+    <div class="main">
+        <section class="register">
+            <div class="container">
+                <div class="signup-content">
+                    <h2 class="form-title">Sign In</h2>
+                    <form action="/users/login" method="POST">
+                        <fieldset>
+                            <legend>USER INFORMATION</legend>
+                            <label for="username"></label>
+                            <input type="text" name="username" placeholder="username" id="username" /><br />
+                            <label for="password"></label>
+                            <input type="password" name="password" placeholder="password" id="password" /><br />
+                            <button type="submit">Login</button>
+                        </fieldset>
+                    </form>
+                    <div class="signin-image">
+                        <figure>
+                            <img src="star-war.png" alt="sign-in">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

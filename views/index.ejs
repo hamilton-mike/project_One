@@ -19,6 +19,7 @@
                <div class="collapse navbar-collapse">
                    <ul class="navbar-nav ms-auto">
                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link active">Sign Out</a></li>
                    </ul>
                </div>
            </div>
@@ -46,9 +47,9 @@
             <div class="content">
                 <ul class="comment list-unstyled padding-10">
                     <button><a href="/feed/new">Create a new tweet!</a></button>
+                    <% for (let i=0; i < feed.length; i++ ) { %>
                     <li class="comment border border-dark">
                         <img src="tano_selfie.png" width="50" height="50" alt="avatar">
-                        <% for (let i=0; i < feed.length; i++ ) { %>
                         <div class="comment-body">
                             <a href="#" class="comment-author">
                                 <small class="text-muted pull-right">50 Minutes ago</small>
