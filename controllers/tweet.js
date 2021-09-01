@@ -5,7 +5,9 @@ const router = express.Router()
 //index (.get) ejs
 router.get('/', ( req, res )=> {
     if (req.session.currentUser) {
-        Feed.find({user: req.session.currentUser._id}, (err, feedIndex)=> {
+        Feed.find({}).populate('user').exec((err, feedIndex)=> {
+            console.log("FEED INDEX", feedIndex)
+            console.log('CURRNT: ', req.session.currentUser)
             if (err) {
                 res.send(err)
             } else {
@@ -15,7 +17,7 @@ router.get('/', ( req, res )=> {
                 })
             }
         })
-    } else {
+    }else {
         res.redirect('/')
     }
 })
@@ -26,6 +28,8 @@ router.get('/new', ( req, res )=> {
         currentUser: req.session.currentUser
     })
 })
+
+
 
 //edit (.get) ejs
 router.get('/:id/edit', ( req, res )=> {
@@ -43,14 +47,13 @@ router.get('/:id/edit', ( req, res )=> {
 
 //show (.get) ejs
 router.get('/:id', ( req, res )=> {
-    Feed.findById(req.params.id).populate('user').exec((err, showFeed)=> {
+    Feed.findById(req.params.id).populate('user').exec((err, feedIndex)=> {
         if (err) {
             res.send(err)
         } else {
-            res.render("show.ejs", {
-                feed: showFeed,
-                currentUser: req.session.currentUser
-            })
+            res.render('profile.ejs', {
+                feed: feedIndex,
+                currentUser: req.session.currentUser            })
         }
     })
 })

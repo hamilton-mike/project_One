@@ -45,9 +45,10 @@ router.post('/registration', ( req, res )=> {
 
     User.create(userDbEntry, ((err, createdUser)=> {
         if (err) {
-            res.send("MAN GO BACK AND FILL IT OUT RIGHT!")
+            res.send(err)
         } else {
             req.session.currentUser = createdUser
+            console.log("created user is", createdUser)
             res.redirect('/feed')
         }
     }))
