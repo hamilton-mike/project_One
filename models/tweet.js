@@ -7,11 +7,13 @@ const tweetSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        require: true
+        require: true,
     },
     entry: {
         type: String,
-        require: true
+        require: true,
+        minlength: 1,
+        maxlength: 200
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
