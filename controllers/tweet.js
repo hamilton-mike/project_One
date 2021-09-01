@@ -4,16 +4,6 @@ const router = express.Router()
 
 //index (.get) ejs
 router.get('/', ( req, res )=> {
-    // Feed.find({}, ((err, feedIndex)=> {
-    //     if (err) {
-    //         res.send(err)
-    //     } else {
-    //         res.render('index.ejs', {
-    //             feed: feedIndex,
-    //             currentUser: req.session.currentUser
-    //         })
-    //     }
-    // }))
     if (req.session.currentUser) {
         Feed.find({user: req.session.currentUser._id}, (err, feedIndex)=> {
             if (err) {
@@ -53,18 +43,6 @@ router.get('/:id/edit', ( req, res )=> {
 
 //show (.get) ejs
 router.get('/:id', ( req, res )=> {
-//     Feed.findById(req.params.id, ((err, showFeed)=> {
-//         if (err) {
-//             res.send(err)
-//         } else {
-//             res.render('show.ejs', {
-//                 feed: showFeed,
-//                 id: req.params.id,
-//                 currentUser: req.session.currentUser
-//             })
-//         }
-//     }))
-    console.log(req.params.id)
     Feed.findById(req.params.id).populate('user').exec((err, showFeed)=> {
         if (err) {
             res.send(err)
