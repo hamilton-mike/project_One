@@ -1,5 +1,6 @@
 body {
-  background: #ddd;
+  background: rgb(20, 20, 20);
+  color: #bbb;
 }
 nav {
   margin: 20px;
@@ -21,13 +22,26 @@ nav {
   border-radius: 0 10px 10px 0;
   padding: 15px;
   box-sizing: border-box;
-  overflow: auto;
 }
 
 fieldset {
   border: 1px solid #ccc;
   padding: 20px;
   margin: 20px 0;
+}
+
+.siginin-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.siginin-content {
+  width: 50px;
+}
+
+figure img {
+  width: 50%;
 }
 
 legend {
@@ -47,17 +61,64 @@ input {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
-  width: 100%;
-  height: 50px;
-  font-size: 1.3em;
-  color: whitesmoke;
-  border: 0px;
-  transition: 0.2s ease-in-out;
-}
-
 textarea {
   width: 650px;
   height: 80px;
   resize: none;
+}
+/* cards */
+.row {
+  width: 1200px;
+}
+.jedi, .sith {
+  float: right;
+}
+
+.sith:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 10px rgba(204, 14, 14, 0.6);
+  background: rgb(204, 14, 14);
+}
+
+.jedi:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 10px rgba(14, 27, 204, 0.6);
+  background: rgb(66, 78, 245);
+}
+
+
+.card {
+  background: rgb(20, 20, 20);
+  color: rgb(20, 20, 20);
+}
+
+/* crawl */
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.scroll-text {
+  color: #FFE81F;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: justify;
+  position: relative;
+  animation: scroll 600s linear;
+}
+
+p {
+  text-align: center;
+}
+
+#underline {
+  text-decoration: underline;
+}
+
+@keyframes scroll {
+  from { top: 0; transform: translateZ(0) rotateX(20deg);}
+  to { top: -10000px; transform: translateZ(-2500px) rotateX(20deg);}
 }

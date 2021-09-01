@@ -7,19 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/home.css">
-    <title>Document</title>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <title>Login Page</title>
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="logo" width="150" height="150">
         <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
+        <small><p class="text-center">Only through <span>fire</span> is a <span>strong</span> sword forged</p></small>
         <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
         <h3>
             <%= currentUser && currentUser.username%>
         </h3>
     </nav>
 
-    <hr class="half-margins">
+
+<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/J1gH_cjdb60?playlist=J1gH_cjdb60&autoplay=1&start=14&end=80"
+    title="YouTube video player" frameborder="0" allow="autoplay" allowfullscreen>
+</iframe> -->
 
     <div class="main">
         <section class="register">

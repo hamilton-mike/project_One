@@ -17,6 +17,12 @@ body {
 .jedi:hover {
     background-color: blue;
 }
+li img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
 /*
 .follow {
     color: whitesmoke;
