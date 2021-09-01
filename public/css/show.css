@@ -1,0 +1,23 @@
+body, .card {
+    background: rgb(20, 20, 20);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+.container {
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb,
+              -1px -1px 10px #bbb,
+              1px -1px 10px #bbb,
+              -1px 1px 10px #bbb;
+}
+
+.card-img {
+    pointer-events: none;
+}
+
+h1 {
+    text-decoration: underline;
+}
