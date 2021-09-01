@@ -37,7 +37,7 @@
                 <h6>Follow Me</h6>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Facebook"><i class="fa fa-facebook"></i></a>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                <a href="https://twitter.com/unknowncoder4" class="btn ico-only btn-facebook btn-xs" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="btn ico-only btn-facebook btn-xs" title="Twitter"><i class="fa fa-twitter"></i></a>
             </section>
         </div>
 
@@ -50,8 +50,8 @@
                         <img src="tano_selfie.png" width="50" height="50" alt="avatar">
                         <div class="comment-body">
                             <a href="/feed/<%=feed[i]._id%>" class="comment-author">
-                                <small class="text-muted pull-right">50 Minutes ago</small>
-                                <span>@<%=currentUser.username%></span>
+                                <small class="text-muted pull-right"><%= new Date().toLocaleDateString("en-US") %></small>
+                                <span><%=currentUser.username%></span>
                             </a>
                             <p><%= feed[i].entry %></p>
                         </div>
@@ -98,6 +98,5 @@
             </main>
         </div>
     </div>
-
 </body>
 </html>
