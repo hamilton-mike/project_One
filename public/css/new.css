@@ -1,5 +1,21 @@
 body {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpSpob9nGefYKQY3Z45Q_HjtUGKVyx8IAVgQ&usqp=CAU');
+  background: rgb(20, 20, 20);
+  color: #bbb;
+}
+
+nav {
+  margin: 20px;
+  padding: 30px;
+}
+
+.container {
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb,
+              -1px -1px 10px #bbb,
+              1px -1px 10px #bbb,
+              -1px 1px 10px #bbb;
 }
 
 h1 {
@@ -19,14 +35,14 @@ fieldset {
 }
 
 input {
-  width: 100%;
+  width: 40%;
   margin: 10px 0;
   padding: 10px;
-  cursor: pointer;
+  box-sizing: border-box;
 }
 
 textarea {
-  width: 1250px;
+  width: 525px;
   height: 80px;
   resize: none;
 }

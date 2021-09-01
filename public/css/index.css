@@ -8,6 +8,7 @@ body {
 .container, li.comment {
   margin: 50px auto;
   border-radius: 10px;
+  padding-left: 60px;
   box-shadow: 1px 1px 10px #bbb,
               -1px -1px 10px #bbb,
               1px -1px 10px #bbb,

@@ -13,7 +13,7 @@
 <body>
     <nav>
         <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
-        <small><p class="text-center">Only through <span>fire</span> is a <span>strong</span> sword forged</p></small>
+        <small><p class="text-center">Only through 🔥 is a 💪🏾 sword forged</p></small>
         <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
         <h3>
             <%= currentUser && currentUser.username%>
@@ -21,16 +21,14 @@
     </nav>
 
 
-<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/J1gH_cjdb60?playlist=J1gH_cjdb60&autoplay=1&start=14&end=80"
-    title="YouTube video player" frameborder="0" allow="autoplay" allowfullscreen>
-</iframe> -->
-
     <div class="main">
         <section class="register">
             <div class="container">
                 <div class="signup-content">
-                    <a href="/registration" class="sign-image-link">Become a member?</a>
-                    <h2 class="form-title">Sign In</h2>
+                    <div id="link">
+                        <a href="/registration" class="sign-image-link">Become a member?</a>
+                        <h2 class="form-title">Sign In</h2>
+                    </div>
                     <form action="/users/login" method="POST">
                         <fieldset>
                             <legend>USER INFORMATION</legend>
@@ -38,17 +36,17 @@
                             <input type="text" name="username" placeholder="username" id="username" /><br />
                             <label for="password"></label>
                             <input type="password" name="password" placeholder="password" id="password" /><br />
-                            <button type="submit">Login</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
                         </fieldset>
                     </form>
-                    <div class="signin-image">
-                        <figure>
-                            <img src="star-war.png" alt="sign-in">
-                        </figure>
-                    </div>
                 </div>
             </div>
         </section>
+        <div class="signin-image">
+            <figure>
+                <img src="/photos/star-war.png" alt="sign-in">
+            </figure>
+        </div>
     </div>
 </body>
 </html>

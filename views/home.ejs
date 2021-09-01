@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/home.css">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
   <div class="wrapper">
@@ -35,7 +35,7 @@
     <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="card jedi" style="width: 18rem;">
-          <img src="tano.png" class="card-img-top" alt="avatar">
+          <img src="photos/tano.png" class="card-img-top" alt="avatar">
           <div class="card-body">
             <h5 class="card-title">Jedi Knight</h5>
             <p class="card-text">Ahsoka Tano representing the Light Choose this avatar to move forward</p>
@@ -46,7 +46,7 @@
 
       <div class="col-lg-6 mb-4">
         <div class="card sith" style="width: 18rem;">
-          <img src="maul.png" class="card-img-top" alt="avatar">
+          <img src="photos/maul.png" class="card-img-top" alt="avatar">
           <div class="card-body">
             <h5 class="card-title">Sith Lord</h5>
             <p class="card-text">Darth Maul representing the Dark Side Choose this avatar to move forward.</p>
@@ -57,24 +57,20 @@
     </div>
   </div>
 
-  <nav>
-    <img src="logo.png" alt="logo" width="300" height="300">
-    <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
-        <small>
-          <p class="text-center">Only through <span>fire</span> is a <span>strong</span> sword forged</p>
-        </small>
-    <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
-    <h3><%= currentUser && currentUser.username%></h3>
-  </nav>
+  <img src="/photos/logo.png" alt="logo" width="300" height="300">
+  <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
+    <small><p class="text-center">Only through 🔥 is a 💪🏾 sword forged</p></small>
+  <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
+  <h3><%= currentUser && currentUser.username%></h3>
+
 
   <hr>
 
-  <div class="main">
+  <div class="container">
     <section class="signup">
-      <div class="container">
         <div class="signup-content">
-          <a href="/" class="sign-image-link">Back to sign in</a>
-          <h2 class="form-title">Sign Up</h2>
+          <a href="/" class="sign-image-link text-center">Back to sign in</a>
+          <h2 class="form-title text-center">Sign Up</h2>
           <form action="/users/registration" method="POST">
             <fieldset>
               <legend id="form">New User</legend>
@@ -92,15 +88,14 @@
                 <option value="Jedi Knight">Ahsoka Tano</option>
                 <option value="Sith Lord">Darth Maul</option>
               </select><br />
-              <button type="submit">Register</button>
+              <button type="submit" class="btn btn-primary">Register</button>
             </fieldset>
           </form>
           <div class="signup-image">
             <figure>
-              <img src="edit.png" alt="">
+              <img src="/photos/edit.png" alt="edit">
             </figure>
           </div>
-        </div>
       </div>
     </section>
   </div>

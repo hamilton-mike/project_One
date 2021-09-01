@@ -1,3 +1,66 @@
+/* body {
+  background: rgb(27, 24, 32);
+  color: #bbb;
+  display: flex;
+}
+nav {
+  margin: 20px;
+  padding: 30px;
+}
+
+main {
+  justify-content: flex-end;
+}
+figure {
+  width: 50%;
+}
+.register {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb,
+              -1px -1px 10px #bbb,
+              1px -1px 10px #bbb,
+              -1px 1px 10px #bbb;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+figure img {
+ display: flex;
+ justify-content: center;
+ width: 100%;
+}
+
+legend {
+  padding: 0px 10px;
+  font-weight: 500;
+}
+
+label {
+  font-weight: 200;
+  display: block;
+}
+
+.signup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+} */
+
 body {
   background: rgb(20, 20, 20);
   color: #bbb;
@@ -17,6 +80,13 @@ nav {
               -1px 1px 10px #bbb;
 }
 
+.registration {
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
 fieldset {
   border: 1px solid #ccc;
   padding: 20px;
@@ -28,10 +98,7 @@ fieldset {
   justify-content: center;
   align-items: center;
 }
-.main {
-  margin: 0 auto;
-  float: none;
-}
+
 .siginin-content {
   width: 50px;
 }

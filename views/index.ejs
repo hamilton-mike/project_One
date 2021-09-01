@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="container">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+       <nav class="navbar navbar-expand-lg navbar-dark static-top">
            <div class="container">
                <a href="#" class="navbar-brand">
-                   <img src="logo.png" alt="logo" height="150">
+                   <img src="/photos/logo.png" alt="logo" height="150">
                 </a>
                <div class="collapse navbar-collapse">
                    <ul class="navbar-nav ms-auto">
@@ -27,7 +27,7 @@
         <div class="col-md-3">
             <section class="panel">
                 <figure class="margin-bottom-10">
-                    <img width="100" height="100" src="tano_selfie.png" alt="tano">
+                    <img width="100" height="100" src="/photos/tano_selfie.png" alt="tano">
                 </figure>
 
                 <hr class="half-margins">
@@ -46,7 +46,7 @@
                     <button><a href="/feed/new">Create a new tweet!</a></button>
                     <% for (let i=0; i < feed.length; i++ ) { %>
                     <li class="comment border border-dark">
-                        <img src="tano_selfie.png" width="50" height="50" alt="avatar">
+                        <img src="/photos/tano_selfie.png" width="50" height="50" alt="avatar">
                         <div class="comment-body">
                             <a href="/feed/<%=feed[i]._id%>" class="comment-author">
                                 <small class="text-muted pull-right"><%= new Date().toLocaleDateString("en-US") %></small>
@@ -84,7 +84,7 @@
             </section>
             <main>
                 <h2>Enlist Today</h2> <br />
-                <img width="200" height="200" src="h234E5A90.png" alt="ad">
+                <img width="200" height="200" src="/photos/h234E5A90.png" alt="ad">
                 <br>
                 <!-- <iframe width="200" height="200"
                     src="https://www.youtube.com/embed/xmdKLPEmsRw?playlist=xmdKLPEmsRw&autoplay=1&loop=1&mute=1"
@@ -92,7 +92,7 @@
                     allow="autoplay"
                     allowfullscreen>
                     </iframe> -->
-                <img width="200" height="200" src="rebel.png" alt="ad">
+                <img width="200" height="200" src="/photos/rebel.png" alt="ad">
 
             </main>
         </div>
