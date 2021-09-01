@@ -52,6 +52,13 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/registration', (req, res) => {
+	console.log('currentUser: ', req.session.currentUser)
+	res.render('home.ejs', {
+        currentUser: req.session.currentUser || ""
+    })
+})
+
 // =======================================
 //               LISTENER
 // =======================================

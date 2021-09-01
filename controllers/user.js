@@ -39,7 +39,8 @@ router.post('/registration', ( req, res )=> {
     const userDbEntry = {
         username: req.body.username,
         email: req.body.email,
-        password: passwordHash
+        password: passwordHash,
+        bio: req.body.bio
     }
 
     User.create(userDbEntry, ((err, createdUser)=> {
@@ -57,8 +58,8 @@ router.post('/registration', ( req, res )=> {
 //logout (.delete)
 router.delete("/logout", (req, res) => {
     req.session.destroy(() => {
-      res.redirect("/login")
+      res.redirect("/")
     });
-  });
+});
 
 module.exports = router
