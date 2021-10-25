@@ -12,12 +12,11 @@ This project is completed with:
  - MongoDB / Mongoose
 
 ## User Stories
+ - User will be able to create a user profile with a username, password and bio
+ - User will be able to take their creds and login with TOP SECURITY
  - User will be able to create edit and delete tweets on profile page
  - User will be able to see other tweets from other users
 
-### Stretch
- - Retweet posts
- - Add comments on other posts
 
 ## Wireframe
 [![Screen-Shot-2021-08-26-at-2-59-55-PM.png](https://i.postimg.cc/NM3wJJWX/Screen-Shot-2021-08-26-at-2-59-55-PM.png)](https://postimg.cc/wyQP3Vxx)
