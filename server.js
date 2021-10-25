@@ -14,7 +14,7 @@ const User = require('./controllers/user')
 //           GLOBAL CONFIGURATIONS
 // =======================================
 const app = express()
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 // =======================================
 //               DATABASE
@@ -23,8 +23,8 @@ const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `Feeds`
-mongoose.connect(MONGODB_URI, options)
+const DB_URL = process.env.DB_URL || 'mongodb://localhost/'+ `Feeds`
+mongoose.connect(DB_URL, options)
 
 mongoose.connection.once('open', ()=> console.log('successfully connected to mongodb!'))
 mongoose.connection.on('error', (err) => console.log(err.message, "FIX ME PLZ"))
@@ -62,4 +62,4 @@ app.get('/registration', (req, res) => {
 // =======================================
 //               LISTENER
 // =======================================
-app.listen(port, ()=> console.log('listening on port:', port))
+app.listen(PORT, ()=> console.log('listening on PORT:', PORT))
