@@ -33,7 +33,6 @@ mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disc
 // =======================================
 //               MIDDLEWARE
 // =======================================
-app.use(cookieParser())
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
