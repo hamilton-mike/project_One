@@ -34,9 +34,12 @@ router.post('/login', ( req, res )=> {
 //createUser (.post)
 router.post('/registration', ( req, res )=> {
     const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-    req.body.password = passwordHash
+    req.body.password = passwordHash;
+
+    console.log(req.body);
 
     const userDbEntry = {
+        force: req.body.force,
         username: req.body.username,
         email: req.body.email,
         password: passwordHash,

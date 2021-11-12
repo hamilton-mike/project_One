@@ -2,93 +2,38 @@ body {
   background: rgb(20, 20, 20);
   color: #bbb;
 }
-nav {
-  margin: 20px;
-  padding: 30px;
-}
 
-.container {
-  margin: 50px auto;
-  display: flex;
-  border-radius: 10px;
+.card {
   box-shadow: 1px 1px 10px #bbb,
               -1px -1px 10px #bbb,
               1px -1px 10px #bbb,
               -1px 1px 10px #bbb;
 }
 
-fieldset {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
+.card img {
+  height: 150px;
 }
 
-.siginin-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main {
-  margin: 0 auto;
-  float: none;
-}
-.siginin-content {
-  width: 50px;
+.jedi {
+  color: blue;
 }
 
-figure img {
-  width: 50%;
-}
-
-legend {
-  padding: 0px 10px;
-  font-weight: 500;
-}
-
-label {
-  font-weight: 200;
-  display: block;
-}
-
-input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-textarea {
-  width: 650px;
-  height: 80px;
-  resize: none;
-}
-/* cards */
-.row {
-  width: 1200px;
-}
-.jedi, .sith {
-  float: right;
+.sith {
+  color: red;
 }
 
 .sith:hover {
-  transform: scale(1.2);
   box-shadow: 5px 5px 10px rgba(204, 14, 14, 0.6);
   background: rgb(204, 14, 14);
+  color: black;
 }
 
 .jedi:hover {
-  transform: scale(1.2);
   box-shadow: 5px 5px 10px rgba(14, 27, 204, 0.6);
   background: rgb(66, 78, 245);
+  color: black;
 }
 
-
-.card {
-  background: rgb(20, 20, 20);
-  color: rgb(20, 20, 20);
-}
-
-/* crawl */
 .wrapper {
   display: flex;
   height: 100%;
@@ -114,7 +59,46 @@ p {
   text-decoration: underline;
 }
 
+ul li {
+  list-style-type: none;
+}
+
 @keyframes scroll {
   from { top: 0; transform: translateZ(0) rotateX(20deg);}
   to { top: -10000px; transform: translateZ(-2500px) rotateX(20deg);}
+}
+
+#form {
+  border: groove 2em #FFE81F;
+  margin-bottom: 4em;
+}
+
+textarea {
+  width: 650px;
+  height: 80px;
+  resize: none;
+}
+
+#form label {
+  width: 5em;
+  display: inline-block;
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .card {
+    margin: 2em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  textarea {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #desc {
+    width: auto;
+  }
 }

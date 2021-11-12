@@ -30,74 +30,78 @@
   <h1 class="text-center">JEDI | SITH</h1>
   <hr>
 
-
+<section id="force">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 mb-4">
-        <div class="card jedi" style="width: 18rem;">
-          <img src="photos/tano.png" class="card-img-top" alt="avatar">
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card jedi">
+          <img src="photos/tano.jpg" class="card-img-top" alt="avatar">
           <div class="card-body">
             <h5 class="card-title">Jedi Knight</h5>
-            <p class="card-text">Ahsoka Tano representing the Light Choose this avatar to move forward</p>
-            <a href="#form" class="btn btn-light">Register</a>
+            <p class="card-text">Ahsoka Tano, Togruta female former Jedi Padawan who, after the Clone Wars, helped establish a
+              network of
+              various rebel cells against the Galactic Empire</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-lg-6 mb-4">
-        <div class="card sith" style="width: 18rem;">
-          <img src="photos/maul.png" class="card-img-top" alt="avatar">
-          <div class="card-body">
-            <h5 class="card-title">Sith Lord</h5>
-            <p class="card-text">Darth Maul representing the Dark Side Choose this avatar to move forward.</p>
-            <a href="#form" class="btn btn-light">Register</a>
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="card sith">
+            <img src="photos/maul.jpg" class="card-img-top" alt="avatar">
+            <div class="card-body">
+              <h5 class="card-title">Sith Lord</h5>
+              <p class="card-text">Darth Maul, Dathomirian Zabrak male who established himself as a crime lord during the reign of the Galactic Empire</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+</section>
 
-  <img src="/photos/logo.png" alt="logo" width="300" height="300">
-  <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
-    <small><p class="text-center">Only through 🔥 is a 💪🏾 sword forged</p></small>
-  <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
-  <h3><%= currentUser && currentUser.username%></h3>
-
-
-  <hr>
-
+<section id="form">
   <div class="container">
-    <section class="signup">
-        <div class="signup-content">
-          <a href="/" class="sign-image-link text-center">Back to sign in</a>
-          <h2 class="form-title text-center">Sign Up</h2>
-          <form action="/users/registration" method="POST">
-            <fieldset>
-              <legend id="form">New User</legend>
-              <label for="username"></label>
-              <input type="text" name="username" placeholder="username" required/><br />
-              <label for="email"></label>
-              <input type="email" name="email" placeholder="email" /><br />
-              <label for="password"></label>
-              <input type="password" name="password" placeholder="password" required/><br />
-              <label for="bio"></label>
-              <textarea name="bio" cols="30" rows="10" placeholder="Add Bio" required></textarea>
-              <label for="force"></label>
+    <div class="row">
+      <div class="col-sm-8 col-md-6 col-lg-4 m-5">
+        <fieldset>Sign Up</fieldset>
+        <hr>
+        <form action="/users/registration" method="POST">
+          <fieldset class="form-row">
+            <div>
+              <label for="force">Choose:</label>
               <select name="force" id="force" class="form-select">
-                <option selected>choose your side of the force</option>
+                <option selected>Force</option>
                 <option value="Jedi Knight">Ahsoka Tano</option>
                 <option value="Sith Lord">Darth Maul</option>
               </select><br />
-              <button type="submit" class="btn btn-primary">Register</button>
-            </fieldset>
-          </form>
-          <div class="signup-image">
-            <figure>
-              <img src="/photos/edit.png" alt="edit">
-            </figure>
-          </div>
+            </div>
+            <div>
+              <label for="username">Username</label>
+              <input type="text" name="username" placeholder="username" required /><br />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" name="email" placeholder="email" /><br />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input type="password" name="password" placeholder="password" id="password" /><br />
+            </div>
+            <div id="desc">
+              <label for="bio"></label>
+              <textarea name="bio" cols="30" rows="10" placeholder="Add Bio" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </fieldset>
+        </form>
       </div>
-    </section>
+    </div>
   </div>
+</section>
+<hr>
+<footer class="text-center">
+  <ul>
+    <li>Already a member?</li>
+    <li><a href="/">Sign In</a></li>
+  </ul>
+</footer>
 </body>
 </html>
