@@ -35,7 +35,10 @@
                 <hr class="half-margins">
                 <h3 class="text-black">@<%=currentUser.username%></h3>
                 <p class="size-12"><%=currentUser.bio%></p>
-                <h6>Follow Me</h6>
+                <h6>Follow Me!!</h6>
+                <form action="users/logout?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out" />
+                </form>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Facebook"><i class="fa fa-facebook"></i></a>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                 <a href="#" class="btn ico-only btn-facebook btn-xs" title="Twitter"><i class="fa fa-twitter"></i></a>

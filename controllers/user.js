@@ -60,9 +60,8 @@ router.post('/registration', ( req, res )=> {
 
 //logout (.delete)
 router.delete("/logout", (req, res) => {
-    req.session.destroy(() => {
-      res.redirect("/")
-    });
+    req.session.destroy()
+    res.redirect("/")
 });
 
 module.exports = router
