@@ -27,6 +27,10 @@ img {
   border-bottom-left-radius: 1em;
 }
 
+.form-row button {
+  margin: 2em;
+}
+
 @media only screen and (max-width: 994px) {
   img {
     border-bottom-left-radius: 0;

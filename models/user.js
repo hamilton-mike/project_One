@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
     bio: {
         type: String,
         require: true,
+    },
+    force: {
+        type: String,
     }
 }, {timestamps: true})
 
