@@ -24,7 +24,8 @@ const options = {
     useUnifiedTopology: true
 }
 
-mongoose.connect(process.env.MONGODBURI, options)
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `Feeds`
+mongoose.connect(MONGODB_URI, options)
 
 mongoose.connection.once('open', ()=> console.log('successfully connected to mongodb!'))
 mongoose.connection.on('error', (err) => console.log(err.message, "FIX ME PLZ"))
@@ -34,7 +35,7 @@ mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disc
 //               MIDDLEWARE
 // =======================================
 app.use(session({
-    secret: process.env.SECRET,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }))
