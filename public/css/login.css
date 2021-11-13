@@ -30,10 +30,3 @@ img {
 .form-row button {
   margin: 2em;
 }
-
-@media only screen and (max-width: 994px) {
-  img {
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 1em;
-  }
-}

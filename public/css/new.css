@@ -1,16 +1,14 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background: rgb(20, 20, 20);
   color: #bbb;
-}
-
-nav {
-  margin: 20px;
-  padding: 30px;
+  margin: 0 auto;
 }
 
 .container {
-  margin: 50px auto;
-  display: flex;
+  margin: 1em auto;
   border-radius: 10px;
   box-shadow: 1px 1px 10px #bbb,
               -1px -1px 10px #bbb,
@@ -19,13 +17,11 @@ nav {
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
-    font-family: 'Oswald';
-    font-weight: 500;
-    color: black;
-    background-color: yellow;
-    border-bottom: 2px solid red;
+  font-family: 'Oswald';
+  font-weight: 500;
+  color: black;
+  background-color: yellow;
+  border-bottom: 2px solid red;
 }
 
 fieldset {
@@ -34,22 +30,9 @@ fieldset {
   margin: 20px 0;
 }
 
-input {
-  width: 40%;
-  margin: 10px 0;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 textarea {
   width: 525px;
+  max-width: 100%;
   height: 80px;
   resize: none;
-}
-
-#video {
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-    opacity: 0.7;
 }

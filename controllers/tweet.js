@@ -1,5 +1,6 @@
 const express = require('express')
 const Feed = require('../models/tweet')
+const User = require('../models/user')
 const router = express.Router()
 
 //index (.get) ejs
@@ -21,6 +22,7 @@ router.get('/', ( req, res )=> {
         res.redirect('/')
     }
 })
+
 
 // new (.get) ejs
 router.get('/new', ( req, res )=> {
