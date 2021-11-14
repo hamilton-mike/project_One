@@ -6,65 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/profile.css">
-    <title>Twitter</title>
+    <link rel="icon" href="/photos/logo.png" type="image/icon type">
+    <title>Profile</title>
 </head>
 <body>
     <div class="container">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-           <div class="container">
-               <a href="#" class="navbar-brand">
-                   <img src="/logo.png" alt="logo" height="150">
-                </a>
-               <div class="collapse navbar-collapse">
-                   <ul class="navbar-nav ms-auto">
-                       <li class="nav-item"><a href="/feed" class="nav-link active">Home</a></li>
-                       <form action="users/logout?_method=DELETE" method="POST">
-                            <input type="submit" value="Log Out" />
-                        </form>
-                   </ul>
-               </div>
-           </div>
-       </nav>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="/feed" class="nav-link">Home</a></li>
+                    <li><a href="/feed/new" class="nav-link">Post</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
         <div class="row">
         <div class="col-md-3">
             <section class="panel">
-                <figure class="margin-bottom-10">
-                    <img width="100" height="100" src="/tano_selfie.png" alt="tano">
+                <figure class="p-2">
+                    <% if (feed.user.force === 'Jedi Knight' ) { %>
+                        <img width="100" height="100" src="/photos/tano_selfie.png" alt="tano">
+                        <% } else { %>
+                            <img width="100" height="100" src="/photos/maul.jpg" alt="maul">
+                            <% } %>
                 </figure>
 
                 <hr class="half-margins">
                 <h3 class="text-black">@<%=feed.user.username%></h3>
                 <p class="size-12"><%=feed.user.bio%></p>
-                <h6>Follow Me</h6>
-                <a href="#" class="btn ico-only btn-facebook btn-xs" title="Facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="btn ico-only btn-facebook btn-xs" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                <a href="#" class="btn ico-only btn-facebook btn-xs" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <% if (feed.user.username === currentUser.username) { %>
+                    <button><a href="/feed/new">Create a new tweet!</a></button>
+                <% } %>
+
             </section>
         </div>
 
         <div class="col-md-5">
             <div class="content">
                 <ul class="comment list-unstyled padding-10">
-                    <button><a href="/feed/new">Create a new tweet!</a></button>
                     <li class="comment border border-dark">
-                        <img src="/tano_selfie.png" width="50" height="50" alt="avatar">
+                        <% if (feed.user.force==='Jedi Knight' ) { %>
+                        <img src="/photos/tano_selfie.png" width="50" height="50" alt="avatar">
+                            <% } else { %>
+                        <img src="/photos/maul.jpg" width='50' height='50' alt="sith">
+                                <% } %>
                         <div class="comment-body">
-                            <small class="text-muted pull-right"><%= new Date().toLocaleDateString("en-US") %></small>
+                            <small class="text-muted pull-right"><%= feed.createdAt.toLocaleDateString("en-US") %></small>
                             <a href="/feed/<%=feed._id%>" class="comment-author">
-                                <span><%=feed.user.username%></span>
-                            </a>
+                            <span><%=feed.user.username%></span></a>
                             <p><%= feed.entry %></p>
                         </div>
+                        <% if (feed.user.username===currentUser.username) { %>
                         <div class="list-inline size-11 margin-top-10">
                             <form class="pull-right" action="/feed/<%=feed._id%>?_method=DELETE" method="POST">
                                 <input type="submit" value="DELETE">
                             </form>
                             <a href="/feed/<%=feed._id%>/edit" class="text-primary pull-right"> Edit Tweet</a>
                         </div>
+                        <% } %>
                     </li>
                 </ul>
+
             </div>
         </div>
+
 
         <div class="col-md-4">
             <section class="panel panel-default">
@@ -84,15 +91,10 @@
             </section>
             <main>
                 <h2>Enlist Today</h2> <br />
-                <img width="200" height="200" src="/h234E5A90.png" alt="ad">
+                <img width="200" height="200" src="/photos/h234E5A90.png" alt="ad">
                 <br>
-                <!-- <iframe width="200" height="200"
-                    src="https://www.youtube.com/embed/xmdKLPEmsRw?playlist=xmdKLPEmsRw&autoplay=1&loop=1&mute=1"
-                    title="YouTube video player" frameborder="0"
-                    allow="autoplay"
-                    allowfullscreen>
-                    </iframe> -->
-                <img width="200" height="200" src="/rebel.png" alt="ad">
+
+                <img width="200" height="200" src="/photos/rebel.png" alt="ad">
 
             </main>
         </div>

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="icon" href="logo.png" type="image/icon type">
+    <link rel="icon" href="/photos/logo.png" type="image/icon type">
     <title>Feed</title>
 </head>
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="collapse navbar-collapse" id="hamburgerMenu">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li><a href="" class="nav-link">Home</a></li>
                     <li><a href="/feed/new" class="nav-link">Post</a></li>
@@ -23,86 +23,85 @@
 
     <div class="container">
         <div class="row">
-        <div class="col-md-3">
-            <section class="panel">
-                <figure>
-                    <% if (currentUser.force === 'Jedi Knight') { %>
-                        <img width="100" height="100" src="/photos/tano_selfie.png" alt="tano">
-                    <% } else { %>
-                        <img width="100" height="100" src="/photos/maul.jpg" alt="maul">
-                    <% } %>
-                </figure>
-                <hr class="half-margins">
-                <h3 class="text-black">@<%=currentUser.username%></h3>
-                <p class="size-12"><%=currentUser.bio%></p>
-                <button><a href="/feed/new">Create Post</a></button>
-                <form action="users/logout?_method=DELETE" method="POST">
-                    <input type="submit" value="Log Out" />
-                </form>
-            </section>
-        </div>
-
-        <div class="col-md-5">
-            <div class="content">
-                <ul class="comment list-unstyled padding-10">
-                    <% for (let i=0; i < feed.length; i++ ) { %>
-                    <li class="comment border border-dark">
-                        <% if (feed[i].user.force === 'Jedi Knight') { %>
-                        <img src="/photos/tano_selfie.png" width="50" height="50" alt="jedi">
+            <div class="col-md-3">
+                <section class="panel">
+                    <figure class="p-5">
+                        <% if (currentUser.force === 'Jedi Knight') { %>
+                            <img width="100" height="100" src="/photos/tano_selfie.png" alt="tano">
                         <% } else { %>
-                        <img src="/photos/maul.jpg" width='50' height='50' alt="sith">
+                            <img width="100" height="100" src="/photos/maul.jpg" alt="maul">
                         <% } %>
-                        <div class="comment-body">
-                            <small class="text-muted pull-right"><%= feed[i].createdAt.toLocaleDateString("en-US") %></small>
-                            <a href="/feed/<%=feed[i]._id%>" class="comment-author">
-                                <span><%= feed[i].user.username %></span>
-                            </a>
-                            <p><%= feed[i].entry %></p>
-                        </div>
-                        <div>
-                            <% if (feed[i].user.username === currentUser.username) { %>
-                                <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
-                                    <input type="submit" value="DELETE">
-                                </form>
+                    </figure>
+                    <hr class="half-margins">
+                    <h3 class="text-black">@<%=currentUser.username%></h3>
+                    <p class="size-12"><%=currentUser.bio%></p>
+                    <button><a href="/feed/new">Create Post</a></button>
+                    <form action="users/logout?_method=DELETE" method="POST">
+                        <input type="submit" value="Log Out" />
+                    </form>
+                </section>
+            </div>
 
-                                <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
+            <div class="col-md-5">
+                <div class="content">
+                    <ul class="comment list-unstyled padding-10">
+                        <% for (let i=0; i < feed.length; i++ ) { %>
+                        <li class="comment border border-dark">
+                            <% if (feed[i].user.force === 'Jedi Knight') { %>
+                            <img src="/photos/tano_selfie.png" width="50" height="50" alt="jedi">
+                            <% } else { %>
+                            <img src="/photos/maul.jpg" width='50' height='50' alt="sith">
                             <% } %>
-                        </div>
+                            <div class="comment-body">
+                                <small class="text-muted pull-right"><%= feed[i].createdAt.toLocaleDateString("en-US") %></small>
+                                <a href="/feed/<%=feed[i]._id%>" class="comment-author">
+                                    <span><%= feed[i].user.username %></span>
+                                </a>
+                                <p><%= feed[i].entry %></p>
+                            </div>
+                            <div>
+                                <% if (feed[i].user.username === currentUser.username) { %>
+                                    <form class="pull-right" action="/feed/<%=feed[i]._id%>?_method=DELETE" method="POST">
+                                        <input type="submit" value="DELETE">
+                                    </form>
+
+                                    <a href="/feed/<%=feed[i]._id%>/edit"> Edit Tweet</a>
+                                <% } %>
+                            </div>
+                            <% } %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <section class="panel panel-default">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">
+                            <small>View Profiles</small>
+                        </h2>
+                    </header>
+                <div class="panel-body">
+                    <ul class="bullet-list list-unstyled">
+                        <% for (let i=0; i < users.length; i++ ) { %>
+
+                            <% if (users[i].username !== currentUser.username) { %>
+                                <li class="list-group-item">
+                                    <a href="/feed/<%=feed[i]._id%>"><%= users[i].username %></a>
+                                </li>
+                            <% } %>
                         <% } %>
-                    </li>
-                </ul>
+                    </ul>
+                </div>
+                </section>
+                <main>
+                    <h2>Enlist Today</h2> <br />
+                    <img width="200" height="200" src="/photos/h234E5A90.png" alt="ad">
+                    <img width="200" height="200" src="/photos/rebel.png" alt="ad">
+
+                </main>
             </div>
         </div>
-
-        <div class="col-md-4">
-            <section class="panel panel-default">
-                <header class="panel-heading">
-                    <h2 class="panel-title">
-                        <small>People to Follow</small>
-                    </h2>
-                </header>
-               <div class="panel-body">
-                   <ul class="bullet-list list-unstyled">
-                    <% for (let i=0; i < feed.length; i++ ) { %>
-
-                        <% if (feed[i].user.username !== currentUser.username) { %>
-                            <li class="list-group-item">
-                                <a href="/feed/<%=feed[i]._id%>"><%= feed[i].user.username %></a>
-                            </li>
-                        <% } %>
-                    <% } %>
-                   </ul>
-               </div>
-            </section>
-            <main>
-                <h2>Enlist Today</h2> <br />
-                <img width="200" height="200" src="/photos/h234E5A90.png" alt="ad">
-                <img width="200" height="200" src="/photos/rebel.png" alt="ad">
-
-            </main>
-        </div>
-
-        <footer></footer>
     </div>
 </body>
 </html>

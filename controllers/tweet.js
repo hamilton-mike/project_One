@@ -12,9 +12,13 @@ router.get('/', ( req, res )=> {
             if (err) {
                 res.send(err)
             } else {
-                res.render('index.ejs', {
-                    feed: feedIndex,
-                    currentUser: req.session.currentUser
+                User.find({}, (err, allUsers) => {
+                    console.log("ALL USERs", allUsers);
+                    (err) ? res.send(err) : res.render('index.ejs', {
+                        users: allUsers,
+                        feed: feedIndex,
+                        currentUser: req.session.currentUser
+                    })
                 })
             }
         })
