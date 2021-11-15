@@ -11,7 +11,7 @@ body {
 }
 
 .card img {
-  height: 150px;
+  height: 20em;
 }
 
 .jedi {
@@ -74,7 +74,7 @@ ul li {
 }
 
 textarea {
-  width: 650px;
+  width: 400px;
   height: 80px;
   resize: none;
 }
@@ -84,6 +84,9 @@ textarea {
   display: inline-block;
 }
 
+#force {
+  margin-bottom: 2em;
+}
 
 @media only screen and (max-width: 1400px) {
   .card {

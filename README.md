@@ -12,21 +12,17 @@ This project is completed with:
  - MongoDB / Mongoose
 
 ## User Stories
- - User will be able to create edit and delete tweets on profile page
- - User will be able to see other tweets from other users
-
-### Stretch
- - Retweet posts
- - Add comments on other posts
+ - User will be able to create edit and delete posts on profile page
+ - User will be able to see other posts from other users
 
 ## Wireframe
 [![Screen-Shot-2021-08-26-at-2-59-55-PM.png](https://i.postimg.cc/NM3wJJWX/Screen-Shot-2021-08-26-at-2-59-55-PM.png)](https://postimg.cc/wyQP3Vxx)
 
 
-## Core Requirements
+## Core
 - Express APP Build an Express Application that renders HTML pages from EJS Templates.
 - RESTful Routes Design CRUD routes using the REST convention.
 - Templating Use EJS to render objects from MongoDB in the browser as HTML templates.
 - Use at least one one-to-many or many-to-many relationship between models.
-- Airbnb Javascript Styleguide. Be consistent!
+- Airbnb Javascript Styleguide.
 - Visual Design

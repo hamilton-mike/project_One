@@ -33,3 +33,11 @@ button {
 a {
     text-decoration: none;
 }
+
+.content p {
+    padding-right: 1em;
+}
+
+.panel-body {
+    max-width: 50%;
+}

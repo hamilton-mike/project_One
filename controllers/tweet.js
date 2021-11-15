@@ -53,14 +53,21 @@ router.get('/:id/edit', ( req, res )=> {
 
 //show (.get) ejs
 router.get('/:id', ( req, res )=> {
+    console.log('-------',req.params);
     Feed.findById(req.params.id).populate('user').exec((err, feedIndex)=> {
         if (err) {
             res.send(err)
         } else {
-            res.render('profile.ejs', {
-                feed: feedIndex,
-                currentUser: req.session.currentUser            })
+            User.find({}, (err, allUsers) => {
+                console.log("ALL USERs", allUsers);
+                (err) ? res.send(err) : res.render('profile.ejs', {
+                    users: allUsers,
+                    feed: feedIndex,
+                    currentUser: req.session.currentUser
+                })
+            })
         }
+
     })
 })
 

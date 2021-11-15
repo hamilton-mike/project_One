@@ -15,34 +15,33 @@
         <h2 class="text-center" id="title">Welcome to Galaxy Blog</h2>
         <small><p class="text-center">Only through🔥  is a💪🏾  sword forged</p></small>
         <p class="text-center">Devs: Froy Rodriguez + Michael Hamilton</p>
-        <h3>
-            <%= currentUser && currentUser.username%>
-        </h3>
     </header>
 
     <section id="login">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-lg-1">
-                    <img src="/photos/Star-war.jpg" class="img-fluid" alt="sign-in">
-                </div>
-                <div class="col-lg-7 text-center p-4">
-                    <a href="/registration" class="sign-image-link">Become a member?</a>
-                    <h2 class="form-title">Sign In</h2>
-                    <form action="/users/login" method="POST">
-                        <fieldset class="form-row">
-                                <div>
-                                    <label for="username"></label>
-                                    <input type="text" name="username" placeholder="username" id="username" required /><br />
-                                </div>
-                                <div>
-                                    <label for="password"></label>
-                                    <input type="password" name="password" placeholder="password" id="password" /><br />
-                                </div>
-                                <button type="submit" class="btn btn-primary">Login</button>
-                        </fieldset>
-                    </form>
-                </div>
+        <div class="container row g-0">
+            <div>
+                <img src="/photos/Star-war.jpg" class="img-fluid" alt="sign-in">
+            </div>
+            <div class="text-center p-3">
+                <% if (currentUser && currentUser.username) { %>
+                    <li><a href="/feed" class="nav-link">Home</a></li>
+                <% } else { %>
+                <a href="/registration" class="sign-image-link">Become a member?</a>
+                <h2 class="form-title">Sign In</h2>
+                <form action="/users/login" method="POST">
+                    <fieldset class="form-row">
+                            <div>
+                                <label for="username"></label>
+                                <input type="text" name="username" placeholder="username" id="username" required /><br />
+                            </div>
+                            <div>
+                                <label for="password"></label>
+                                <input type="password" name="password" placeholder="password" id="password" /><br />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                    </fieldset>
+                </form>
+                <% } %>
             </div>
         </div>
     </section>
