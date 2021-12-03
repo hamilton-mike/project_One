@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  margin: 1em auto;
+  margin-top: 5em;
   border-radius: 10px;
   box-shadow: 1px 1px 10px #bbb,
               -1px -1px 10px #bbb,
