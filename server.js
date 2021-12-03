@@ -1,6 +1,3 @@
-// =======================================
-//                DEPENDENCIES
-// =======================================
 require('dotenv').config()
 
 const express = require('express')
@@ -10,15 +7,9 @@ const session = require('express-session')
 const Feed = require('./controllers/tweet')
 const User = require('./controllers/user')
 
-// =======================================
-//           GLOBAL CONFIGURATIONS
-// =======================================
 const app = express()
 const port = process.env.PORT || 3000
 
-// =======================================
-//               DATABASE
-// =======================================
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -31,9 +22,6 @@ mongoose.connection.once('open', ()=> console.log('successfully connected to mon
 mongoose.connection.on('error', (err) => console.log(err.message, "FIX ME PLZ"))
 mongoose.connection.on('disconnected', ()=> console.log('mongo successfully disconnected'))
 
-// =======================================
-//               MIDDLEWARE
-// =======================================
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -60,7 +48,4 @@ app.get('/registration', (req, res) => {
     })
 })
 
-// =======================================
-//               LISTENER
-// =======================================
 app.listen(port, ()=> console.log('listening on port:', port))

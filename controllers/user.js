@@ -3,9 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const router = express.Router()
 
-//loginUser (.post)
 router.post('/login', ( req, res )=> {
-    console.log('session object', req.session)
     User.findOne({
         username: req.body.username
     }, ((err, foundUser)=> {
@@ -13,16 +11,12 @@ router.post('/login', ( req, res )=> {
             res.send(err)
         } else {
             if (!foundUser) {
-                console.log('incorrect username and/or password 1');
                 res.redirect('/')
             } else {
                 if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                     req.session.currentUser = foundUser
-                    console.log('Logged in!', foundUser.username)
-                    console.log(foundUser)
                     res.redirect('/feed')
                 } else {
-                    console.log("incorrect username and/or password 2");
                     res.redirect('/')
                 }
             }
@@ -30,12 +24,9 @@ router.post('/login', ( req, res )=> {
     }))
 })
 
-//createUser (.post)
 router.post('/registration', ( req, res )=> {
     const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     req.body.password = passwordHash;
-
-    console.log(req.body);
 
     const userDbEntry = {
         force: req.body.force,
@@ -50,14 +41,12 @@ router.post('/registration', ( req, res )=> {
             res.send(err)
         } else {
             req.session.currentUser = createdUser
-            console.log("created user is", createdUser)
             res.redirect('/feed')
         }
     }))
 
 })
 
-//logout (.delete)
 router.delete("/logout", (req, res) => {
     req.session.destroy()
     res.redirect("/")
